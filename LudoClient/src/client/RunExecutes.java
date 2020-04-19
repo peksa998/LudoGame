@@ -100,10 +100,14 @@ public class RunExecutes {
 	}
 
 	private void gameStart() throws IOException, InterruptedException {
+		System.out.println("Cita boju...");
 		while (dataIn.available() == 0) {
 			Thread.sleep(10);
 		}
 		int playerColor = dataIn.readInt();
+		
+		System.out.println("Procitao boju start");
+		System.out.println(playerColor);
 		
 		switch (playerColor) {
 

@@ -178,12 +178,12 @@ public class ServerThread extends Thread {
 
 	private void gameStart() throws IOException {
 		Node pom = first;
-		
+		System.out.println("gameStart");
 		while (pom.active != true) {
 			pom = pom.next;
 		}
-		
-		send_to_players_in_game(CommandS.GAMESTART, pom.color); 
+		System.out.println(pom.color + " poslo");
+		send_to_players_in_game(CommandS.GAMESTART, pom.color);
 
 		
 	}
