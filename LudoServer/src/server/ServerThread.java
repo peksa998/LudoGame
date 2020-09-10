@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
-import com.sun.security.ntlm.Client;
+//import com.sun.security.ntlm.Client;
 
 public class ServerThread extends Thread {
 
@@ -414,7 +414,7 @@ public class ServerThread extends Thread {
 				clients[r].dataOut.writeInt(playerID);
 				clients[r].textOut.println(text);
 				textOut.flush();
-
+				dataOut.flush();
 			}
 		}
 	}
@@ -424,6 +424,16 @@ public class ServerThread extends Thread {
 		for (int r = 0; r <= 39; r++) {
 
 			if (clients[r] != null && clients[r].getRoomID() == roomID) {
+				
+				textOut.flush();
+				dataOut.flush();
+				
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 				clients[r].dataOut.writeInt(command); // salje se primljeni kod klijentskoj strani da bi znao koji
 														// podatci stizu

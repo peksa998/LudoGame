@@ -143,8 +143,8 @@ public class RunExecutes {
 		}
 		int playerID = dataIn.readInt();
 
-		System.out.println("Uso u play - klijent");
-		System.out.println(playerID);
+		//System.out.println("Uso u play - klijent");
+		//System.out.println(playerID);
 
 		// ovde je greska, mozda i na server strani
 
@@ -155,12 +155,18 @@ public class RunExecutes {
 		}
 		int codeAll = dataIn.readInt();
 
-		System.out.println("Procitao kod");
-		System.out.println(codeAll);
+		//System.out.println("Procitao kod");
+		//System.out.println(codeAll);
 
+		String line;
 		String name = textIn.readLine();
-		System.out.println("Procito ime sa servera");
-		System.out.println(name);
+		/*
+		while(textIn.ready()) {
+			name = textIn.readLine();
+		}
+		*/
+		//System.out.println("Procito ime sa servera");
+		//System.out.println(name);
 
 		// ako je 1 onda je jedan novi spreman, ako je 2 onda su svi spremni
 
