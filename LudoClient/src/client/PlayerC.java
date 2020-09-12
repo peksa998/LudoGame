@@ -4,7 +4,7 @@ public class PlayerC {
 
 	private String name;
 	private int color = 0;
-	private boolean isOnTurn;
+	private boolean active;
 	private int playerId = -1; // mozda treba izbrisati, ako je -1 tada taj igrac nije u igri
 
 	private PawnC[] pawns = new PawnC[4];
@@ -26,11 +26,11 @@ public class PlayerC {
 	}
 
 	public boolean isOnTurn() {
-		return isOnTurn;
+		return active;
 	}
 
 	public void setOnTurn(boolean isOnTurn) {
-		this.isOnTurn = isOnTurn;
+		this.active = isOnTurn;
 	}
 
 	public int getPlayerId() {

@@ -9,7 +9,7 @@ public class GameC {
 	private static int roomID = -1; // ovi podaci na klijentu mogu da budu static jer se odnose na celu klasu
 	private static int youPlayerID = -1;
 	private int numberOfPlayers;
-	private int playersOnTurn; // playerID
+	private int playersOnTurn; // playerColor
 	private float timeInGame;
 
 //	private PlayerC playerYou = new PlayerC();
@@ -408,5 +408,23 @@ public class GameC {
 
 	public static void setYouPlayerID(int youPlayerID) {
 		GameC.youPlayerID = youPlayerID;
+	}
+	
+	public FieldC findFieldById(int id) {
+		for(int i = 0; i < fields.length; i++) {
+			if(fields[i].getIndex() == id) {
+				return fields[i];
+			}
+		}
+		return null;
+	}
+	
+	public PlayerC findPlayerByColor(int color) {
+		for(int i = 0; i < players.length; i++) {
+			if(players[i].getColor() == color) {
+				return players[i];
+			}
+		}
+		return null;
 	}
 }

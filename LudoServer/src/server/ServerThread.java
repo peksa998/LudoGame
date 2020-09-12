@@ -162,6 +162,7 @@ public class ServerThread extends Thread {
 					for (int j = 0; j < 10; j++) {
 						if (Server.games[j].getRoomID() == roomID) {
 							first = Server.games[j].getFirst();
+							System.out.println(first.color + " ovde brate");
 							gameIndex = j;
 						}
 					}
@@ -373,6 +374,7 @@ public class ServerThread extends Thread {
 				Server.games[i].setRoomID(numberOfRoom);
 				Server.games[i].make_fields(); // pravim polja u igri
 				Server.games[i].inicialization();
+				Server.games[i].velicina();
 				break;
 			}
 		}
@@ -381,8 +383,14 @@ public class ServerThread extends Thread {
 		dataOut.writeInt(numberOfRoom);
 	}
 
-	private int throw_dice() throws IOException {
-		return (int) (Math.random() * 6 + 1);
+	private void throw_dice() throws IOException {
+		Node pom = Server.games[0].getFirst();
+		while(pom.active != true) {
+			pom = pom.next;
+		}
+		int diceNum = (int) (Math.random() * 6 + 1);
+		send_to_players_in_game(CommandS.THROW_DICE, pom.color, diceNum);
+		//return (int) (Math.random() * 6 + 1);
 	}
 
 	/*
@@ -424,9 +432,6 @@ public class ServerThread extends Thread {
 		for (int r = 0; r <= 39; r++) {
 
 			if (clients[r] != null && clients[r].getRoomID() == roomID) {
-				
-				textOut.flush();
-				dataOut.flush();
 				
 				try {
 					Thread.sleep(100);

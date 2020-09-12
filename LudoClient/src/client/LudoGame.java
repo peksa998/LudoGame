@@ -142,6 +142,7 @@ public class LudoGame extends JFrame {
 			lblBackgroundGame = new JLabel("");
 			lblBackgroundGame.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/backgroundGame.png")));
 			lblBackgroundGame.setBounds(0, 0, 2400, 2214);
+			//lblBackgroundGame.setEnabled(false);
 		}
 		return lblBackgroundGame;
 	}
@@ -194,6 +195,18 @@ public class LudoGame extends JFrame {
 	public JLabel getLblDiceBackPlayerBlue() {
 		if (lblDiceBackPlayerBlue == null) {
 			lblDiceBackPlayerBlue = new JLabel("");
+			lblDiceBackPlayerBlue.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					/*
+					if(Client.game.getPlayersOnTurn() != CommandC.BLUE) {
+						return;
+					}*/
+					lblDicePlayerBlue.setIcon(null);
+					ClientExecute.setSendingCode(CommandC.THROW_DICE);
+					//da se proveri da li je gotov potez i da se vrati ikonica
+				}
+			});
 			lblDiceBackPlayerBlue.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/edgeDiceDark.png")));
 			lblDiceBackPlayerBlue.setBounds(55, 575, 150, 150);
 		}
@@ -203,6 +216,20 @@ public class LudoGame extends JFrame {
 	public JLabel getLblDiceBackPlayerGreen() {
 		if (lblDiceBackPlayerGreen == null) {
 			lblDiceBackPlayerGreen = new JLabel("");
+			
+			lblDiceBackPlayerGreen.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					/*
+					if(Client.game.getPlayersOnTurn() != CommandC.BLUE) {
+						return;
+					}*/
+					lblDicePlayerGreen.setIcon(null);
+					ClientExecute.setSendingCode(CommandC.THROW_DICE);
+					//da se proveri da li je gotov potez i da se vrati ikonica
+				}
+			});
+			
 			lblDiceBackPlayerGreen.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/edgeDiceDark.png")));
 			lblDiceBackPlayerGreen.setBounds(1100, 575, 150, 150);
 		}
@@ -212,13 +239,27 @@ public class LudoGame extends JFrame {
 	public JLabel getLblDiceBackPlayerYellow() {
 		if (lblDiceBackPlayerYellow == null) {
 			lblDiceBackPlayerYellow = new JLabel("");
+			
+			lblDiceBackPlayerYellow.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					/*
+					if(Client.game.getPlayersOnTurn() != CommandC.BLUE) {
+						return;
+					}*/
+					lblDicePlayerYellow.setIcon(null);
+					ClientExecute.setSendingCode(CommandC.THROW_DICE);
+					//da se proveri da li je gotov potez i da se vrati ikonica
+				}
+			});
+			
 			lblDiceBackPlayerYellow.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/edgeDiceDark.png")));
 			lblDiceBackPlayerYellow.setBounds(55, 160, 150, 150);
 		}
 		return lblDiceBackPlayerYellow;
 	}
 
-	private JLabel getLblPawnRed1() {
+	public JLabel getLblPawnRed1() {
 		if (lblPawnRed1 == null) {
 			lblPawnRed1 = new JLabel("");
 			lblPawnRed1.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnRedTable.png")));
@@ -227,7 +268,7 @@ public class LudoGame extends JFrame {
 		return lblPawnRed1;
 	}
 
-	private JLabel getLblPawnRed2() {
+	public JLabel getLblPawnRed2() {
 		if (lblPawnRed2 == null) {
 			lblPawnRed2 = new JLabel("");
 			lblPawnRed2.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnRedTable.png")));
@@ -236,7 +277,7 @@ public class LudoGame extends JFrame {
 		return lblPawnRed2;
 	}
 
-	private JLabel getLblPawnRed3() {
+	public JLabel getLblPawnRed3() {
 		if (lblPawnRed3 == null) {
 			lblPawnRed3 = new JLabel("");
 			lblPawnRed3.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnRedTable.png")));
@@ -245,7 +286,7 @@ public class LudoGame extends JFrame {
 		return lblPawnRed3;
 	}
 
-	private JLabel getLblPawnRed4() {
+	public JLabel getLblPawnRed4() {
 		if (lblPawnRed4 == null) {
 			lblPawnRed4 = new JLabel("");
 			lblPawnRed4.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnRedTable.png")));
@@ -254,7 +295,7 @@ public class LudoGame extends JFrame {
 		return lblPawnRed4;
 	}
 
-	private JLabel getLblPawnYellow1() {
+	public JLabel getLblPawnYellow1() {
 		if (lblPawnYellow1 == null) {
 			lblPawnYellow1 = new JLabel("");
 			lblPawnYellow1.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnYellowTable.png")));
@@ -263,7 +304,7 @@ public class LudoGame extends JFrame {
 		return lblPawnYellow1;
 	}
 
-	private JLabel getLblPawnYellow2() {
+	public JLabel getLblPawnYellow2() {
 		if (lblPawnYellow2 == null) {
 			lblPawnYellow2 = new JLabel("");
 			lblPawnYellow2.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnYellowTable.png")));
@@ -272,7 +313,7 @@ public class LudoGame extends JFrame {
 		return lblPawnYellow2;
 	}
 
-	private JLabel getLblPawnYellow3() {
+	public JLabel getLblPawnYellow3() {
 		if (lblPawnYellow3 == null) {
 			lblPawnYellow3 = new JLabel("");
 			lblPawnYellow3.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnYellowTable.png")));
@@ -281,7 +322,7 @@ public class LudoGame extends JFrame {
 		return lblPawnYellow3;
 	}
 
-	private JLabel getLblPawnYellow4() {
+	public JLabel getLblPawnYellow4() {
 		if (lblPawnYellow4 == null) {
 			lblPawnYellow4 = new JLabel("");
 			lblPawnYellow4.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnYellowTable.png")));
@@ -290,7 +331,7 @@ public class LudoGame extends JFrame {
 		return lblPawnYellow4;
 	}
 
-	private JLabel getLblPawnBlue1() {
+	public JLabel getLblPawnBlue1() {
 		if (lblPawnBlue1 == null) {
 			lblPawnBlue1 = new JLabel("");
 			lblPawnBlue1.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnBlueTable.png")));
@@ -299,7 +340,7 @@ public class LudoGame extends JFrame {
 		return lblPawnBlue1;
 	}
 
-	private JLabel getLblPawnBlue2() {
+	public JLabel getLblPawnBlue2() {
 		if (lblPawnBlue2 == null) {
 			lblPawnBlue2 = new JLabel("");
 			lblPawnBlue2.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnBlueTable.png")));
@@ -308,7 +349,7 @@ public class LudoGame extends JFrame {
 		return lblPawnBlue2;
 	}
 
-	private JLabel getLblPawnBlue3() {
+	public JLabel getLblPawnBlue3() {
 		if (lblPawnBlue3 == null) {
 			lblPawnBlue3 = new JLabel("");
 			lblPawnBlue3.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnBlueTable.png")));
@@ -317,7 +358,7 @@ public class LudoGame extends JFrame {
 		return lblPawnBlue3;
 	}
 
-	private JLabel getLblPawnBlue4() {
+	public JLabel getLblPawnBlue4() {
 		if (lblPawnBlue4 == null) {
 			lblPawnBlue4 = new JLabel("");
 			lblPawnBlue4.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnBlueTable.png")));
@@ -326,7 +367,7 @@ public class LudoGame extends JFrame {
 		return lblPawnBlue4;
 	}
 
-	private JLabel getLblPawnGreen1() {
+	public JLabel getLblPawnGreen1() {
 		if (lblPawnGreen1 == null) {
 			lblPawnGreen1 = new JLabel("");
 			lblPawnGreen1.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnGreenTable.png")));
@@ -335,7 +376,7 @@ public class LudoGame extends JFrame {
 		return lblPawnGreen1;
 	}
 
-	private JLabel getLblPawnGreen2() {
+	public JLabel getLblPawnGreen2() {
 		if (lblPawnGreen2 == null) {
 			lblPawnGreen2 = new JLabel("");
 			lblPawnGreen2.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnGreenTable.png")));
@@ -344,7 +385,7 @@ public class LudoGame extends JFrame {
 		return lblPawnGreen2;
 	}
 
-	private JLabel getLblPawnGreen3() {
+	public JLabel getLblPawnGreen3() {
 		if (lblPawnGreen3 == null) {
 			lblPawnGreen3 = new JLabel("");
 			lblPawnGreen3.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnGreenTable.png")));
@@ -353,7 +394,7 @@ public class LudoGame extends JFrame {
 		return lblPawnGreen3;
 	}
 
-	private JLabel getLblPawnGreen4() {
+	public JLabel getLblPawnGreen4() {
 		if (lblPawnGreen4 == null) {
 			lblPawnGreen4 = new JLabel("");
 			lblPawnGreen4.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/pawnGreenTable.png")));
@@ -406,7 +447,7 @@ public class LudoGame extends JFrame {
 		return lblNamePlayerYellow;
 	}
 
-	private JLabel getLblDicePlayerBlue() {
+	public JLabel getLblDicePlayerBlue() {
 		if (lblDicePlayerBlue == null) {
 			lblDicePlayerBlue = new JLabel("");
 			lblDicePlayerBlue.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/diceAllYouFinal.png")));
@@ -415,7 +456,7 @@ public class LudoGame extends JFrame {
 		return lblDicePlayerBlue;
 	}
 
-	private JLabel getLblDicePlayerGreen() {
+	public JLabel getLblDicePlayerGreen() {
 		if (lblDicePlayerGreen == null) {
 			lblDicePlayerGreen = new JLabel("");
 			lblDicePlayerGreen.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/diceAllYouFinal.png")));
@@ -424,7 +465,7 @@ public class LudoGame extends JFrame {
 		return lblDicePlayerGreen;
 	}
 
-	private JLabel getLblDicePlayerYellow() {
+	public JLabel getLblDicePlayerYellow() {
 		if (lblDicePlayerYellow == null) {
 			lblDicePlayerYellow = new JLabel("");
 			lblDicePlayerYellow.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/diceAllYouFinal.png")));
@@ -454,13 +495,26 @@ public class LudoGame extends JFrame {
 	public JLabel getLblDiceBackPlayerRed() {
 		if (lblDiceBackPlayerRed == null) {
 			lblDiceBackPlayerRed = new JLabel("");
+
+			lblDiceBackPlayerRed.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					/*
+					if(Client.game.getPlayersOnTurn() != CommandC.BLUE) {
+						return;
+					}*/
+					lblDicePlayerRed.setIcon(null);
+					ClientExecute.setSendingCode(CommandC.THROW_DICE);
+					//da se proveri da li je gotov potez i da se vrati ikonica
+				}
+			});
 			lblDiceBackPlayerRed.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/edgeDiceDark.png")));
 			lblDiceBackPlayerRed.setBounds(1100, 160, 150, 150);
 		}
 		return lblDiceBackPlayerRed;
 	}
 
-	private JLabel getLblDicePlayerRed() {
+	public JLabel getLblDicePlayerRed() {
 		if (lblDicePlayerRed == null) {
 			lblDicePlayerRed = new JLabel("");
 			lblDicePlayerRed.setIcon(new ImageIcon(LudoGame.class.getResource("/Resource/diceAllYouFinal.png")));

@@ -15,6 +15,7 @@ public class CommandC {
 	public static final int SEND_COLOR = 13;
 	public static final int PLAY = 14;
 	public static final int GAMESTART = 15;
+	public static final int MOVE = 16;
 
 	public static final int ERROR = 404;
 

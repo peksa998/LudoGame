@@ -34,6 +34,16 @@ public class GameS {
 		Node novi = new Node(a, null);
 		pom.next = novi;
 	}
+	
+	public void velicina() {
+		Node pom = first;
+		int brojac = 1;
+		while(pom.next != first) {
+			pom = pom.next;
+			brojac++;
+		}
+		System.out.println(brojac + " velicina liste");
+	}
 
 	public void inicialization() {
 		addElementToEnd(CommandS.BLUE);
